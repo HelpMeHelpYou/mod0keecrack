@@ -91,7 +91,7 @@ typedef struct _m0kdbx_data {
 
 typedef struct _m0_kdbx_database {
   m0_kdbx_header_t        fileheader;
-  m0_kdbx_header_entry_t  kdbxheader;
+  m0_kdbx_header_entry_t  kdbxheader[10];
   m0_kdbx_payload_t       payload;
 } m0_kdbx_database_t;
 

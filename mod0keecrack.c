@@ -390,15 +390,15 @@ int main(int ac, char** av)
   kdbx_header_read(kdbx_fd, &kdbx_db.fileheader);
   kdbx_header_dump(kdbx_db.fileheader);
 
-  kdbx_headerentries_read(kdbx_fd, &kdbx_db.kdbxheader);
-  kdbx_headerentries_dump(&kdbx_db.kdbxheader);
+  kdbx_headerentries_read(kdbx_fd, kdbx_db.kdbxheader);
+  kdbx_headerentries_dump(kdbx_db.kdbxheader);
 
   kdbx_payload_read(kdbx_fd, &kdbx_db.payload);
   kdbx_payload_dump(kdbx_db.payload);
 
   kdbx_payload_crack(&kdbx_db, wordlist_fd);
 
-  kdbx_headerentries_free(&kdbx_db.kdbxheader);
+  kdbx_headerentries_free(kdbx_db.kdbxheader);
   fclose(kdbx_fd);
   exit(0);
 }
